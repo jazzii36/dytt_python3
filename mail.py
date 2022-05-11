@@ -6,7 +6,7 @@ from email.header import Header
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 from email.mime.base import MIMEBase  # 表示任意对象
-
+from email import encoders  # 邮箱编码器
 
 # 第三方 SMTP 服务
 mail_host = "smtp.qq.com"  # 设置服务器
@@ -23,11 +23,11 @@ message['From'] = Header("654396051@qq.com", 'utf-8')
 message['To'] = Header("", 'utf-8')
 subject = '今日电影推送'
 message['Subject'] = Header(subject, 'utf-8')
-from email import encoders  # 邮箱编码器
+
 
 
 #文本附件
-cottents = "{0} 今日更新电影请查收\n国内电影:\n{1}\n日韩电影:\n{2}\n欧美电影:\n{3}".format(date,dy.dict1new.keys(),dy.dict2new.keys(),dy.dict3new.keys())
+cottents = "{0} 今日更新电影请查收\n国内电影:\n{1}\n日韩电影:\n{2}\n欧美电影:\n{3}".format(date,list(dy.dict1new.keys()),list(dy.dict2new.keys()),list(dy.dict3new.keys()))
 att=MIMEText(cottents,"plain","utf-8")
 message.attach(att)
 #邮箱附件
