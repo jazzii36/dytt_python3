@@ -11,7 +11,7 @@ from email import encoders  # 邮箱编码器
 # 第三方 SMTP 服务
 mail_host = "smtp.qq.com"  # 设置服务器
 mail_user = "654396051@qq.com"
-mail_pass = "dcmhicembzfzbeid"  # 口令
+mail_pass = ""  # 口令
 sender = '654396051@qq.com'
 receivers = ['654396051@qq.com',"3209726671@qq.com","18051299485@qq.com"]  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
 
